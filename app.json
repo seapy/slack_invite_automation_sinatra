@@ -21,6 +21,41 @@
     "SLACK_TOKEN": {
       "description": "Your slack api token. get from https://api.slack.com/web#auth",
       "value": ""
+    },
+    "BACKGROUND_COLOR": {
+      "description": "Background color",
+      "value": "#34495E",
+      "required": false
+    },
+    "TEXT_COLOR": {
+      "description": "Text color",
+      "value": "#FDFCFB",
+      "required": false
+    },
+    "EMAIL_BACKGROUND_COLOR": {
+      "description": "Eamil input background color",
+      "value": "#FDFCFB",
+      "required": false
+    },
+    "EMAIL_TEXT_COLOR": {
+      "description": "Email input text color",
+      "value": "#737373",
+      "required": false
+    },
+    "BUTTON_COLOR": {
+      "description": "Submit button color",
+      "value": "#F39C12",
+      "required": false
+    },
+    "BUTTON_HOVER_COLOR": {
+      "description": "Submit button mouse hover color",
+      "value": "#D78D19",
+      "required": false
+    },
+    "BUTTON_TEXT_COLOR": {
+      "description": "Submit button text color",
+      "value": "#FDFCFB",
+      "required": false
     }
   }
 }

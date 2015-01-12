@@ -1,9 +1,9 @@
 <style type="text/css">
 /* http://codepen.io/erikapdx/pen/BnfjH */
 body {
-  background: #F8A434;
+  background: <%= settings.background_color %>;
   font-family: 'Lato', sans-serif;
-  color: #FDFCFB;
+  color: <%= settings.text_color %>;
   text-align: center;
 }
 
@@ -37,9 +37,10 @@ form {
 
 #email {
   width: 75%;
-  background: #FDFCFB;
+  background: <%= settings.email_background_color %>;
   font-family: inherit;
-  color: #737373;
+  font-size: 1em;
+  color: <%= settings.email_text_color %>;
   letter-spacing: 1px;
   text-indent: 5%;
   border-radius: 5px 0 0 5px;
@@ -48,7 +49,7 @@ form {
 #submit {
   width: 25%;
   height: 46px;
-  background: #E86C8D;
+  background: <%= settings.button_color %>;
   font-family: inherit;
   font-weight: bold;
   color: inherit;
@@ -59,13 +60,13 @@ form {
 }
 
 #submit:hover {
-  background: #d45d7d;
+  background: <%= settings.button_hover_color %>;
 }
   
 input:focus {
   outline: none;
-  outline: 2px solid #E86C8D;
-  box-shadow: 0 0 2px #E86C8D;
+  outline: 2px solid <%= settings.button_color %>;
+  box-shadow: 0 0 2px <%= settings.button_color %>;
 }
 </style>
 
