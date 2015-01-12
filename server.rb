@@ -3,10 +3,6 @@ require 'bundler'
 
 Bundler.require
 
-require 'sinatra'
-require 'rack/csrf'
-require 'multi_json'
-
 use Rack::Deflater
 use Rack::Csrf
 
