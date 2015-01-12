@@ -1,0 +1,26 @@
+{
+  "name": "Slack invite automation using sinatra",
+  "description": "Slack invite automation using sinatra",
+  "keywords": [
+    "slack",
+    "sinatra"
+  ],
+  "env": {
+    "SESSION_SECRET_KEY": {
+      "description": "A secret key for verifying the integrity of signed cookies.",
+      "generator": "secret"
+    },
+    "SLACK_TEAM_NAME": {
+      "description": "Your slack team name",
+      "value": "Default Team"
+    },
+    "SLACK_TEAM_DESC": {
+      "description": "Description of your slack",
+      "value": ""
+    },
+    "SLACK_TOKEN": {
+      "description": "Your slack api token. get from https://api.slack.com/web#auth",
+      "value": ""
+    },
+  }
+}

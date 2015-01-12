@@ -1,0 +1,23 @@
+<style type="text/css">
+body {
+  background: #F8A434;
+  font-family: 'Lato', sans-serif;
+  color: #FDFCFB;
+  text-align: center;
+}
+
+.wrapper {
+  max-width: 450px;
+  margin: 17% auto;
+}
+</style>
+
+<div class="wrapper">
+  <h1>Request to <%= @team_name %> <%= @result ? 'Success' : 'Fail' %></h1>
+
+  <% if @result %>
+  <p>
+    Chceck your email(<%= @email %>)
+  </p>
+  <% end %>
+</div>
