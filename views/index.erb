@@ -72,7 +72,7 @@ input:focus {
 <form action="/" method="post" name="form for slack invitation request">
   <%= Rack::Csrf.tag(env) %>
   <div class="header">
-     <p>Join the <%= @team_name %> Slack</p>
+     <p>Join <br/><%= @team_name %> <br/>Slack</p>
   </div>
   <div class="description">
     <p><%= @description %></p>

@@ -22,13 +22,13 @@ end
 
 get '/' do
   @team_name = ENV['SLACK_TEAM_NAME']
+  @description = ENV['SLACK_TEAM_DESC']
   erb :index
 end
 
 
 post '/' do 
   @team_name = ENV['SLACK_TEAM_NAME']
-  @description = ENV['SLACK_TEAM_DESC']
   @email = params[:email]
 
   response = Excon.post(settings.slack_invite_api_url,
