@@ -1,5 +1,5 @@
 {
-  "name": "Slack invite automation using sinatra",
+  "name": "Slack invite automation",
   "description": "Slack invite automation using sinatra",
   "keywords": [
     "slack",
