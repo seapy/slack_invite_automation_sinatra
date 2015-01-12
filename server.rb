@@ -7,6 +7,7 @@ use Rack::Deflater
 use Rack::Csrf
 
 enable :sessions
+set :bind, '0.0.0.0'
 set :session_secret, ENV['SESSION_SECRET_KEY']
 
 set :slack_invite_api_url,    'https://slack.com/api/users.admin.invite'
