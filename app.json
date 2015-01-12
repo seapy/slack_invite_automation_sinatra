@@ -21,6 +21,6 @@
     "SLACK_TOKEN": {
       "description": "Your slack api token. get from https://api.slack.com/web#auth",
       "value": ""
-    },
+    }
   }
 }
