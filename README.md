@@ -10,7 +10,7 @@ click this button
 
 ## Config
 
-Enviroments list
+Environments list
 
 * SLACK_TEAM_NAME
   * Your slack team name
@@ -20,6 +20,14 @@ Enviroments list
   * For encrypt session data. first make random text and use it.
 * SLACK_TEAM_DESC
   * Description of your slack
+* optional environments
+  * BACKGROUND_COLOR
+  * TEXT_COLOR
+  * EMAIL_BACKGROUND_COLOR
+  * EMAIL_TEXT_COLOR
+  * BUTTON_COLOR
+  * BUTTON_HOVER_COLOR
+  * BUTTON_TEXT_COLOR
 
 
 ## Reference
