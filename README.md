@@ -4,8 +4,12 @@
 
 ### Deploy Heroku
 
-click this button
+Click below button
+
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
+
+
+[![Youtube](http://img.youtube.com/vi/SD6noRximeY/0.jpg)](http://youtu.be/SD6noRximeY)
 
 
 ## Config
