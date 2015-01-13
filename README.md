@@ -18,6 +18,7 @@ docker run -d \
   -e SLACK_TEAM_NAME="Slack Team Name" \
   -e SLACK_TEAM_DESC="welcome to slack" \
   -e SLACK_TOKEN="xoxp-xxxxxxx" \
+  -e SESSION_SECRET_KEY="your random string" \
   -p 8080:80 \
   subicura/slack_invite
 ```
