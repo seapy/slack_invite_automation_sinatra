@@ -40,11 +40,8 @@ post '/' do
               headers: { "Content-Type" => "application/x-www-form-urlencoded" })
 
   @result = false
-  if response.status == 200
-    json = MultiJson.load(response.body)
-    if json["ok"]
-      @result = true
-    end
+  if response.status == 200 && MultiJson.load(response.body)["ok"]
+    @result = true
   end
 
   logger.info response.body if !@result
