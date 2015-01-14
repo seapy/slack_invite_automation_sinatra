@@ -57,5 +57,8 @@
       "value": "#FDFCFB",
       "required": false
     }
-  }
+  },
+  "addons": [
+    "papertrail"
+  ]
 }
