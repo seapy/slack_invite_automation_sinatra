@@ -46,5 +46,7 @@ post '/' do
       @result = true
     end
   end
+
+  logger.info response.body if !@result
   erb :request
 end
