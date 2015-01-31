@@ -13,11 +13,10 @@ body {
 </style>
 
 <div class="wrapper">
-  <h1>Request to <%= @team_name %> <%= @result ? 'Success' : 'Fail' %></h1>
-
+  <h1>An invite request to <%= settings.team_name %> is <%= @result ? 'Success' : 'Failed' %>.</h1>
   <% if @result %>
   <p>
-    Chceck your email(<%= @email %>)
+    Please, check your email(<%= @email %>).
   </p>
   <% end %>
 </div>
