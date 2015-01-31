@@ -62,7 +62,7 @@ form {
 #submit:hover {
   background: <%= settings.button_hover_color %>;
 }
-  
+
 input:focus {
   outline: none;
   outline: 2px solid <%= settings.button_color %>;
@@ -70,16 +70,16 @@ input:focus {
 }
 </style>
 
-<form action="/" method="post" name="form for slack invitation request">
+<form action="/invite" method="post" name="form for slack invitation request">
   <%= Rack::Csrf.tag(env) %>
   <div class="header">
-     <p>Join <br/><%= @team_name %> <br/>Slack</p>
+     <p>Join <br/><%= settings.team_name %> <br/>Slack</p>
   </div>
   <div class="description">
-    <p><%= @description %></p>
+    <p><%= settings.team_desc %></p>
   </div>
   <div class="input">
     <input type="email" class="button" id="email" name="email" placeholder="NAME@EXAMPLE.COM">
-    <input type="submit" class="button" id="submit" value="REQUEST">
+    <input type="submit" class="button" id="submit" value="JOIN">
   </div>
 </form>
