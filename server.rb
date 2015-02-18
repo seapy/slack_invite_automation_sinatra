@@ -57,7 +57,12 @@ get '/' do
 end
 
 post '/invite' do
-  @email = params[:email]
-  @result = invite
-  erb :invite
+  begin
+    @email = params[:email]
+    @result = invite
+    erb :invite
+  rescue
+    @result = false
+    erb :invite
+  end
 end
