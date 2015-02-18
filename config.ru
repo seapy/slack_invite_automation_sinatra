@@ -1,4 +1,3 @@
-require 'rack/cors'
 require 'rack/csrf'
 
 require './lib/slack_invite_automation'
