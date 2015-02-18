@@ -1,6 +1,9 @@
 require 'rubygems'
 require 'bundler'
-require 'slack_invitation'
+
+$LOAD_PATH.unshift (File.dirname(__FILE__) + "/..")
+require 'slack_invite_automation/config/sidekiq'
+require 'slack_invite_automation/worker/invite_worker'
 
 Dotenv.load
 Bundler.require
@@ -20,48 +23,17 @@ module SlackInviteAutomation
     set :team_name,               ENV.fetch('SLACK_TEAM_NAME', 'Team Name')
     set :team_desc,               ENV.fetch('SLACK_TEAM_DESC', 'Your Team description is here.')
 
-    helpers do
-      def invite_request_to_slack
-        response = Excon.post(settings.slack_invite_api_url,
-                              body: URI.encode_www_form(
-                                token: ENV['SLACK_TOKEN'],
-                                email: @email,
-                                set_active: true
-                              ),
-                              headers: { "Content-Type" => "application/x-www-form-urlencoded" })
-        @result = response.status == 200 && MultiJson.load(response.body)["ok"]
-        logger.info { response.body } unless @result
-        @result
-      end
-
-      def invite
-        team = ENV['SLACK_TEAM_NAME']
-        admin_email = ENV['SLACK_ADMIN_EMAIL']
-        admin_password = ENV['SLACK_ADMIN_PASSWORD']
-        
-        invitator = SlackInvitation::Invitator.instance
-        invitator.config(team, admin_email, admin_password)
-        invitator.start
-        result = invitator.invite(@email)
-
-        result
-      end
-    end
-
     get '/' do
       erb :index
     end
 
     post '/invite' do
-      begin
-        @email = params[:email]
-        @result = invite
-        erb :invite
-      rescue => e
-        puts e
-        @result = false
-        erb :invite
-      end
+      @email = params[:email]
+      @result = true
+
+      InviteWorker.perform_async @email
+      
+      erb :invite
     end
   end
 end
