@@ -20,7 +20,7 @@ $ docker run -d \
   nacyot/slack_invite
 ```
 
-![Sidekiq log]http://i.imgur.com/BvE4mZ6.png)
+![Sidekiq log](http://i.imgur.com/BvE4mZ6.png)
 
 ## Config
 
