@@ -1,30 +1,26 @@
 # Slack invite automation using sinatra
 
-Currently not available. Slack disable invite api
-https://twitter.com/levelsio/status/565922661994201088
-
 ## Usage
-
-### Deploy Heroku
-
-Click below button
-
-[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
-
-
-[![Youtube](http://img.youtube.com/vi/SD6noRximeY/0.jpg)](http://youtu.be/SD6noRximeY)
 
 ### Use Docker
 
 ```
-docker run -d \
+$ docker run -d -p 6379:6379 --name redis dockerfile/redis
+$ docker run -d \
   -e SLACK_TEAM_NAME="Slack Team Name" \
   -e SLACK_TEAM_DESC="welcome to slack" \
-  -e SLACK_TOKEN="xoxp-xxxxxxx" \
   -e SESSION_SECRET_KEY="your random string" \
+  -e SLACK_ADMIN_EMAIL="ADMIN_EMAIL" \
+  -e SLACK_ADMIN_PASSWORD="ADMIN_PASSWORD" \
+  -e REDIS_SERVER="172.17.42.1:6379"\
+  -e REDIS_DB="2"\
+  -e SERVER_PORT="80"\
+  -e SERVER_HOST="0.0.0.0"\
   -p 8080:80 \
-  subicura/slack_invite
+  nacyot/slack_invite
 ```
+
+![Sidekiq log](http://i.imgur.com/BvE4mZ6.png)
 
 ## Config
 
@@ -46,7 +42,6 @@ Environments list
   * BUTTON_COLOR
   * BUTTON_HOVER_COLOR
   * BUTTON_TEXT_COLOR
-
 
 ## Demo
 

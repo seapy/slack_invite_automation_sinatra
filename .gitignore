@@ -1,1 +1,6 @@
 .env
+tmp
+log
+.#*
+\#*
+bin
