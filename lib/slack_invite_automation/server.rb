@@ -2,14 +2,13 @@ require 'rubygems'
 require 'bundler'
 require 'slack_invitation'
 
-Bundler.require
 Dotenv.load
+Bundler.require
 
 module SlackInviteAutomation
   class Server < Sinatra::Application
-    enable :sessions
-
     set :bind, '0.0.0.0'
+    set :session_secret,          ENV['SESSION_SECRET_KEY']
     set :slack_invite_api_url,    'https://slack.com/api/users.admin.invite'
     set :background_color,        ENV.fetch('BACKGROUND_COLOR', '#34495E')
     set :text_color,              ENV.fetch('TEXT_COLOR', '#FDFCFB')
