@@ -1,5 +1,8 @@
 # Slack invite automation using sinatra
 
+Currently not available. Slack disable invite api
+https://twitter.com/levelsio/status/565922661994201088
+
 ## Usage
 
 ### Use Docker
