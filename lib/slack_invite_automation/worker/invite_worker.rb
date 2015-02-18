@@ -18,7 +18,7 @@ module SlackInviteAutomation
       invitator.start
       result = invitator.invite(email)
 
-      result
+      puts "#{email} : #{result}"
     end
   end
 end
