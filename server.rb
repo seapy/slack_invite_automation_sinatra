@@ -44,8 +44,7 @@ helpers do
     
     invitator = SlackInvitation::Invitator.instance
     invitator.config(team, admin_email, admin_password)
-    result = invitator.invite(@email) 
-    invitator.quit
+    result = invitator.invite(@email)
 
     result
   end
