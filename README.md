@@ -1,8 +1,5 @@
 # Slack invite automation using sinatra
 
-Currently not available. Slack disable invite api
-https://twitter.com/levelsio/status/565922661994201088
-
 ## Usage
 
 ### Use Docker
@@ -13,15 +10,17 @@ $ docker run -d \
   -e SLACK_TEAM_NAME="Slack Team Name" \
   -e SLACK_TEAM_DESC="welcome to slack" \
   -e SESSION_SECRET_KEY="your random string" \
-  -e SLACK_ADMIN_EMAIL="ADMIN_EMAIL"
-  -e SLACK_ADMIN_PASSWORD="ADMIN_PASSWORD"
-  -e REDIS_SERVER="172.17.42.1:6379"
-  -e REDIS_DB="2"
-  -e SERVER_PORT="80"
-  -e SERVER_HOST="0.0.0.0"
+  -e SLACK_ADMIN_EMAIL="ADMIN_EMAIL" \
+  -e SLACK_ADMIN_PASSWORD="ADMIN_PASSWORD" \
+  -e REDIS_SERVER="172.17.42.1:6379"\
+  -e REDIS_DB="2"\
+  -e SERVER_PORT="80"\
+  -e SERVER_HOST="0.0.0.0"\
   -p 8080:80 \
   nacyot/slack_invite
 ```
+
+![Sidekiq log]http://i.imgur.com/BvE4mZ6.png)
 
 ## Config
 
