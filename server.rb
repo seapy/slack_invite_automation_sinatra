@@ -1,7 +1,9 @@
 require 'rubygems'
 require 'bundler'
 require 'slack_invitation'
+require 'dotenv'
 
+Dotenv.load
 Bundler.require
 
 use Rack::Deflater

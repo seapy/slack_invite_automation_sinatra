@@ -3,6 +3,7 @@ GEM
   specs:
     childprocess (0.5.5)
       ffi (~> 1.0, >= 1.0.11)
+    dotenv (0.9.0)
     excon (0.39.6)
     ffi (1.9.6)
     multi_json (1.10.1)
@@ -30,6 +31,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  dotenv
   excon
   multi_json
   rack_csrf
