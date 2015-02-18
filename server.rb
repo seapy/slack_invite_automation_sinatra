@@ -1,5 +1,6 @@
 require 'rubygems'
 require 'bundler'
+require 'slack_invitation'
 
 Bundler.require
 
@@ -33,6 +34,19 @@ helpers do
     logger.info { response.body } unless @result
     @result
   end
+
+  def invite
+    team = ENV['SLACK_TEAM_NAME']
+    admin_email = ENV['SLACK_ADMIN_EMAIL']
+    admin_password = ENV['SLACK_ADMIN_PASSWORD']
+    
+    invitator = SlackInvitation::Invitator.instance
+    invitator.config(team, admin_email, admin_password)
+    result = invitator.invite(@email) 
+    invitator.quit
+
+    result
+  end
 end
 
 get '/' do
@@ -41,6 +55,6 @@ end
 
 post '/invite' do
   @email = params[:email]
-  @result = invite_request_to_slack
+  @result = invite
   erb :invite
 end
