@@ -12,49 +12,56 @@ form {
   margin: 17% auto;
 }
 
-.header {
-  font-size: 35px;
-  text-transform: uppercase;
-  letter-spacing: 5px;
+
+.header > p {
+  margin-top:0px;
+  margin-bottom:20px;
 }
 
 .description {
   font-size: 14px;
   letter-spacing: 1px;
   line-height: 1.3em;
-  margin: -2px 0 45px;
+  margin: -2px 0 35px;
+}
+
+input {
+  -webkit-appearance: none;
+  -webkit-border-radius:0px;
+  box-sizing: border-box;
 }
 
 .input {
-  display: flex;
+  display: inline;
   align-items: center;
 }
 
 .button {
-  height: 44px;
+  height: 50px;
   border: none;
 }
 
 #email {
-  width: 75%;
+  width: 80%;
   background: <%= settings.email_background_color %>;
   font-family: inherit;
   font-size: 1em;
   color: <%= settings.email_text_color %>;
   letter-spacing: 1px;
   text-indent: 5%;
-  border-radius: 5px 0 0 5px;
+  border-radius: 5px 5px 5px 5px;
+  margin-bottom: 10px;
 }
 
 #submit {
-  width: 25%;
-  height: 46px;
+  width: 80%;
   background: <%= settings.button_color %>;
   font-family: inherit;
   font-weight: bold;
+  font-size: 1em;
   color: inherit;
   letter-spacing: 1px;
-  border-radius: 0 5px 5px 0;
+  border-radius: 5px 5px 5px 5px;
   cursor: pointer;
   transition: background .3s ease-in-out;
 }
@@ -62,18 +69,18 @@ form {
 #submit:hover {
   background: <%= settings.button_hover_color %>;
 }
-
-input:focus {
+  
+#email:focus {
+  background-color: #f3eade;
   outline: none;
-  outline: 2px solid <%= settings.button_color %>;
-  box-shadow: 0 0 2px <%= settings.button_color %>;
+  transition: background .3s ease-in-out;
 }
 </style>
 
 <form action="/invite" method="post" name="form for slack invitation request">
   <%= Rack::Csrf.tag(env) %>
   <div class="header">
-     <p>Join <br/><%= settings.team_name %> <br/>Slack</p>
+     <p>Join to <br/><%= settings.team_name %></p>
   </div>
   <div class="description">
     <p><%= settings.team_desc %></p>
