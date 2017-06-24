@@ -30,7 +30,7 @@ Environments list
 * SLACK_TEAM_NAME
   * Your slack team name
 * SLACK_TOKEN
-  * Your slack api token. get from https://api.slack.com/web#auth
+  * Your slack api token. get from https://api.slack.com/custom-integrations/legacy-tokens
 * SESSION_SECRET_KEY
   * For encrypt session data. first make random text and use it.
 * SLACK_TEAM_DESC
